@@ -1,0 +1,49 @@
+{
+    "name": "samhk222/sinacor-parser",
+    "description": "Parser de notas de corretagem no padrão SINACOR (B3) para PHP",
+    "type": "library",
+    "keywords": ["sinacor", "b3", "corretagem", "bovespa", "nota", "nubank", "investimentos"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Samuel Ferreira",
+            "email": "samhk222@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "larapack/dd": "^1.1",
+        "nesbot/carbon": "^3.0",
+        "smalot/pdfparser": "^2.0"
+    },
+    "require-dev": {
+        "pestphp/pest": "^2.0",
+        "phpstan/phpstan": "^1.10",
+        "nunomaduro/collision": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Samhk222\\SinacorParser\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Samhk222\\SinacorParser\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "pest",
+        "stan": "phpstan analyse src --level=8",
+        "check": [
+            "@stan",
+            "@test"
+        ]
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "minimum-stability": "stable"
+}
